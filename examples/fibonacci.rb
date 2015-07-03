@@ -1,12 +1,18 @@
 class Fibonacci
   def self.pairs
-    Enumerator.new do |e|
+    Pairs.new.lazy
+  end
+
+  class Pairs
+    include Enumerable
+
+    def each
       pair = [0, 1]
       loop do
-        e << pair
+        yield pair
         pair = [pair.last, pair.first + pair.last]
       end
-    end.lazy
+    end
   end
 
   def self.numbers

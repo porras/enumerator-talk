@@ -15,3 +15,11 @@ Here are the slides, in case they are useful.
 The animated gif with Nadine Angerer and Jennifer Cramer was ruined by the export so here it is:
 
 ![Don't leave me hanging, Nadine Angerer](http://cl.ly/image/2z2G0o0u1833/adpYN6Q_460sv.gif)
+
+## The No-Enumerator Edition
+
+In case you were wondering what's possible with `Enumerator` that is not possible with `#each` (see the latest slides), the answer is nothing. In this branch, the following examples are rewritten *without* `Enumerator`:
+
+* Fibonacci
+* Clock
+* Mixtape

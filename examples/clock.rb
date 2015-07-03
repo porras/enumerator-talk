@@ -1,11 +1,17 @@
 class Clock
   def self.seconds
-    Enumerator.new do |e|
+    Seconds.new.lazy
+  end
+
+  class Seconds
+    include Enumerable
+
+    def each
       loop do
-        e << Time.now.to_i
+        yield Time.now.to_i
         sleep 1
       end
-    end.lazy
+    end
   end
 
   def self.minutes

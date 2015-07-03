@@ -10,20 +10,30 @@ class Api
   end
 
   def tracks
-    url = "#{@url}/tracks"
-    Enumerator.new do |e|
+    Tracks.new("#{@url}/tracks").lazy
+  end
+
+  class Tracks
+    include Enumerable
+
+    def initialize(url)
+      @url = url
+    end
+
+    def each
+      url = @url
       loop do
         data = get(url)
         data['tracks'].each do |track|
-          e << track
+          yield track
         end
         url = data['meta']['next']
       end
-    end.lazy
-  end
+    end
 
-  def get(url)
-    JSON.parse(Net::HTTP.get(URI(url)))
+    def get(url)
+      JSON.parse(Net::HTTP.get(URI(url)))
+    end
   end
 end
 
