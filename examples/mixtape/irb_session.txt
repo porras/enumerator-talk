@@ -1,0 +1,20 @@
+> api = Api.new('http://localhost:4567')
+=> <Api:0x007fa96c0e1150 @url="http://localhost:4567">
+
+> api.tracks
+=> <Enumerator::Lazy: <Enumerator: <Enumerator::Generator:0x007fa96c0d9478>:each>>
+
+> api.tracks.first
+=> {"id"=>1, "duration"=>37, "title"=>"Tools", "artist"=>"Tess Goyette Jr."}
+
+> api.tracks.drop(15).first
+=> {"id"=>15, "duration"=>192, "title"=>"Clothing & Books", "artist"=>"Vicente Dickens"}
+
+> api.tracks.detect { |t| t['duration'] == 180 }
+=> {"id"=>157, "duration"=>180, "title"=>"Health & Games", "artist"=>"Kareem Tillman DDS"}
+
+> total_duration = 0
+=> 0
+
+> api.tracks.select { |track| track['duration'] > 120 }.take_while { |track| (total_duration += track['duration']) < 90 * 60 }.to_a
+=> [{"id"=>2, "duration"=>144, "title"=>"Toys & Garden", "artist"=>"Rossie Senger"}, {"id"=>4, "duration"=>234, "title"=>"Baby", "artist"=>"Scottie Kling"}, {"id"=>5, "duration"=>215, "title"=>"Jewelery & Books", "artist"=>"Marge Simonis"}, {"id"=>7, "duration"=>216, "title"=>"Outdoors & Clothing", "artist"=>"Cortez Windler"}, {"id"=>11, "duration"=>153, "title"=>"Grocery", "artist"=>"Geovanni McKenzie"}, {"id"=>11, "duration"=>153, "title"=>"Jewelery", "artist"=>"Berniece Hayes"}, {"id"=>13, "duration"=>132, "title"=>"Toys, Movies & Health", "artist"=>"Joel Kuhlman"}, {"id"=>14, "duration"=>212, "title"=>"Jewelery & Games", "artist"=>"Jalyn Langosh"}, {"id"=>15, "duration"=>192, "title"=>"Clothing & Books", "artist"=>"Vicente Dickens"}, {"id"=>17, "duration"=>223, "title"=>"Industrial & Garden", "artist"=>"Archibald Huels"}, {"id"=>21, "duration"=>161, "title"=>"Grocery & Beauty", "artist"=>"Adah Kozey"}, {"id"=>21, "duration"=>201, "title"=>"Electronics", "artist"=>"Mr. Geo Torp"}, {"id"=>22, "duration"=>188, "title"=>"Jewelery, Health & Tools", "artist"=>"Doug Lesch"}, {"id"=>23, "duration"=>233, "title"=>"Shoes & Baby", "artist"=>"Esta Daugherty"}, {"id"=>26, "duration"=>219, "title"=>"Toys & Shoes", "artist"=>"Olen Senger"}, {"id"=>27, "duration"=>212, "title"=>"Grocery, Shoes & Kids", "artist"=>"Miss Zoey Friesen"}, {"id"=>28, "duration"=>227, "title"=>"Toys", "artist"=>"Kyra Stracke"}, {"id"=>29, "duration"=>160, "title"=>"Books, Shoes & Clothing", "artist"=>"Cecelia Parisian"}, {"id"=>30, "duration"=>121, "title"=>"Tools & Sports", "artist"=>"Mrs. Skye Fahey"}, {"id"=>31, "duration"=>210, "title"=>"Music", "artist"=>"Adele Lemke"}, {"id"=>32, "duration"=>221, "title"=>"Health, Baby & Home", "artist"=>"Stella Leuschke"}, {"id"=>34, "duration"=>122, "title"=>"Beauty", "artist"=>"Keely Hammes"}, {"id"=>36, "duration"=>235, "title"=>"Automotive", "artist"=>"Kevin Littel"}, {"id"=>40, "duration"=>154, "title"=>"Outdoors & Tools", "artist"=>"Gerda Williamson"}, {"id"=>41, "duration"=>192, "title"=>"Music", "artist"=>"Mrs. Armando Dickens"}, {"id"=>42, "duration"=>151, "title"=>"Kids & Toys", "artist"=>"Miss Susanna Hirthe"}, {"id"=>43, "duration"=>198, "title"=>"Automotive", "artist"=>"Garrick Hodkiewicz"}, {"id"=>44, "duration"=>220, "title"=>"Beauty", "artist"=>"Mariano Haag"}]
