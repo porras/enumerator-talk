@@ -1,6 +1,6 @@
 # Enumerator is an Enumerable 💃
 
-Examples from the talk I gave in RUG::B (Ruby Users Group Berlin) July 2015. There was a camera so I guess there will be a video at some point, I'll add it here.
+Examples from the talk I gave in RUG::B (Ruby Users Group Berlin) July 2015.
 
 Browse the examples in the `examples/` directory. You can also download and run them, they all work.
 
@@ -15,3 +15,7 @@ Here are the slides, in case they are useful.
 The animated gif with Nadine Angerer and Jennifer Cramer was ruined by the export so here it is:
 
 ![Don't leave me hanging, Nadine Angerer](http://cl.ly/image/2z2G0o0u1833/adpYN6Q_460sv.gif)
+
+## Video
+
+[Peter Grosskopf](https://twitter.com/peterlih) from [HitFox](http://www.hitfoxgroup.com/) was kind enough to record this presentation in video and upload it [here](https://vimeo.com/133040103). Danke Peter!
