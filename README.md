@@ -19,3 +19,5 @@ The animated gif with Nadine Angerer and Jennifer Cramer was ruined by the expor
 ## Video
 
 [Peter Grosskopf](https://twitter.com/peterlih) from [HitFox](http://www.hitfoxgroup.com/) was kind enough to record this presentation in video and upload it [here](https://vimeo.com/133040103). Danke Peter!
+
+[![Video](http://f.cl.ly/items/2u1j1E3M2r2F3O3d2C1v/Screen%20Shot%202015-09-25%20at%208.44.03%20PM.png)](https://vimeo.com/133040103)
